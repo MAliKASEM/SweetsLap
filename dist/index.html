@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sweets Lab - Premium, hand-crafted coffee, drinks, and delicious house-made desserts. View our menu and order locally.">
+    <title>Sweets Lab | Premium Coffee &
+Desserts</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <!-- Arabic Font (Noto Kufi Arabic) -->
+    
+
+    <!-- Tab Icon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a373' stroke-width='2'%3E%3Cpath d='M18 8h1a4 4 0 0 1 0 8h-1'/%3E%3Cpath d='M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z'/%3E%3Cline x1='6' y1='1' x2='6' y2='4'/%3E%3Cline x1='10' y1='1' x2='10' y2='4'/%3E%3Cline x1='14' y1='1' x2='14' y2='4'/%3E%3C/svg%3E">
+    
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="./index.html" class="logo" id="nav-logo-link">
+                <img src="./static/images/logo.png" alt="Sweets Lab" class="nav-logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="./index.html" id="nav-menu-link" class="active">Menu</a></li>
+                
+                <li>
+                    
+                    <a href="./ar.html" class="lang-toggle-btn" id="btn-lang-toggle"
+                        title="التبديل إلى العربية">
+                        <span class="lang-flag"> عربي</span>
+                    </a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="display: flex; flex-direction: column; flex-grow: 1;">
+        
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-logo-wrap">
+        <img src="./static/images/logo.png" alt="Sweets Lab Logo" class="hero-logo-img">
+    </div>
+    
+    <h1>Artisanal Drinks & <em>Exquisite Desserts</em></h1>
+    <p>Crafted with premium ceremonial ingredients and baked fresh daily. Every sip and bite is designed to inspire your
+        day.</p>
+    
+
+    <!-- Category Filter Buttons -->
+    <div class="category-filter">
+        <button class="filter-btn" data-filter="drink" id="btn-filter-drinks">Drinks Only</button>
+        <button class="filter-btn" data-filter="dessert" id="btn-filter-desserts">Desserts Only</button>
+        <button class="filter-btn active" data-filter="all" id="btn-filter-all">All Menu</button>
+    </div>
+</section>
+
+<!-- Menu Listings -->
+<div class="menu-section">
+    <!-- Drinks Section -->
+    <div class="menu-category-group" id="group-drink">
+        <h2 class="section-title">Brewed Drinks</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card" data-category="drink">
+                <div class="image-wrapper skeleton">
+                    
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>No Image</span>
+                    </div>
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">123</h3>
+                        <span class="menu-price">123.0 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">123</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="drink">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/matcha_latte.webp"
+                        alt="Ceremonial Matcha Latte" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Ceremonial Matcha Latte</h3>
+                        <span class="menu-price">5.25 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">Uji ceremonial matcha green tea, steamed whole milk, touch of organic honey</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="drink">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/rosemary_latte.webp"
+                        alt="Smoked Rosemary Latte" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Smoked Rosemary Latte</h3>
+                        <span class="menu-price">5.5 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">Double shot espresso, fresh rosemary syrup, steamed oat milk, sprig of charred rosemary</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="drink">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/cold_brew.webp"
+                        alt="Vanilla Sweet Cream Cold Brew" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Vanilla Sweet Cream Cold Brew</h3>
+                        <span class="menu-price">4.95 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">20-hour slow-steeped cold brew coffee, house-made vanilla sweet cream, crushed ice</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-category-group" id="group-dessert">
+        <h2 class="section-title">Sweet Desserts</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/tiramisu.webp"
+                        alt="Classic Tiramisu" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Classic Tiramisu</h3>
+                        <span class="menu-price">6.5 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">Mascarpone cream, espresso-soaked ladyfingers, dark cocoa powder, marsala wine</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>No Image</span>
+                    </div>
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Crepe</h3>
+                        <span class="menu-price">190.0 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">شكلمنطة مشوية بالحشكلوز  12314</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>No Image</span>
+                    </div>
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">English name</h3>
+                        <span class="menu-price">98.0 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">abcd one tt m</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/pistachio_croissant.webp"
+                        alt="Pistachio Croissant" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Pistachio Croissant</h3>
+                        <span class="menu-price">4.75 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">Butter pastry, sweet pistachio paste filling, toasted slivered pistachios</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="./static/uploads/caramel_tart.webp"
+                        alt="Salted Caramel Macaron Tart" loading="lazy">
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">Salted Caramel Macaron Tart</h3>
+                        <span class="menu-price">5.5 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">Sweet pastry crust, rich caramel filling, sea salt flakes, macaron decoration</p>
+                </div>
+            </div>
+            
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>No Image</span>
+                    </div>
+                    
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">shakalansss</h3>
+                        <span class="menu-price">992.0 S.P</span>
+                    </div>
+                    <p class="menu-ingredients">shakalans in eng hd  sksdlef</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="./index.html" class="footer-logo">Sweets <span>Lab</span></a>
+            <ul class="footer-links">
+                <li><a href="./index.html">Our Menu</a></li>
+                
+            </ul>
+            <p class="footer-text">&copy; 2026 Sweets Lab. Made with care &amp;
+                passion.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <script>
+        // Global helper function to display elegant toast notifications
+        window.showToast = function (message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            // Icon selection based on type
+            let icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            if (type === 'error') {
+                icon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+            }
+
+            toast.innerHTML = `
+                <span style="display: flex; align-items: center; gap: 0.75rem;">
+                    ${icon} ${message}
+                </span>
+                <button onclick="this.parentElement.remove()" style="background:transparent; border:none; color:var(--text-muted); cursor:pointer; margin-left:1.5rem; font-size:1.1rem; line-height:1;">&times;</button>
+            `;
+
+            container.appendChild(toast);
+
+            // Automatically remove toast after 4 seconds
+            setTimeout(() => {
+                toast.style.animation = 'toast-in 0.35s ease reverse forwards';
+                setTimeout(() => toast.remove(), 350);
+            }, 4000);
+        };
+    </script>
+    
+<script src="./static/js/main.js"></script>
+
+</body>
+
+</html>

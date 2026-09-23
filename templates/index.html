@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if lang == 'ar' %}سويتس لاب | مشروبات وحلويات فاخرة{% else %}Sweets Lab | Premium Coffee &
+Desserts{% endif %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-logo-wrap">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sweets Lab Logo" class="hero-logo-img">
+    </div>
+    {% if lang == 'ar' %}
+    <h1><em>صحصح و تحلى</em></h1>
+    <p> تعا نقي يا حباب أحلى حلويات و اطيب شربات </p>
+    <p>لتبلش يومك بنشاط عنا اطيب قهوة و لتحلي مزاجك عنا اطيب حلويات</p>
+    {% else %}
+    <h1>Artisanal Drinks & <em>Exquisite Desserts</em></h1>
+    <p>Crafted with premium ceremonial ingredients and baked fresh daily. Every sip and bite is designed to inspire your
+        day.</p>
+    {% endif %}
+
+    <!-- Category Filter Buttons -->
+    <div class="category-filter">
+        <button class="filter-btn" data-filter="drink" id="btn-filter-drinks">{{ 'مشروبات' if lang == 'ar' else
+            'Drinks Only' }}</button>
+        <button class="filter-btn" data-filter="dessert" id="btn-filter-desserts">{{ 'حلويات' if lang == 'ar' else
+            'Desserts Only' }}</button>
+        <button class="filter-btn active" data-filter="all" id="btn-filter-all">{{ 'كل المينيو' if lang == 'ar' else
+            'All Menu' }}</button>
+    </div>
+</section>
+
+<!-- Menu Listings -->
+<div class="menu-section">
+    <!-- Drinks Section -->
+    <div class="menu-category-group" id="group-drink">
+        <h2 class="section-title">{{ 'المشروبات المُعدَّة' if lang == 'ar' else 'Brewed Drinks' }}</h2>
+        <div class="menu-grid">
+            {% for item in drinks %}
+            <div class="menu-card" data-category="drink">
+                <div class="image-wrapper skeleton">
+                    {% if item.image_path %}
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="{{ item.image_path }}"
+                        alt="{{ item.name_ar if lang == 'ar' and item.name_ar else item.name }}" loading="lazy">
+                    {% else %}
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>{{ 'لا توجد صورة' if lang == 'ar' else 'No Image' }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">{{ item.name_ar if lang == 'ar' and item.name_ar else item.name }}</h3>
+                        <span class="menu-price">{{ item.price | round(2) }} {{ 'ل.س' if lang == 'ar' else 'S.P'
+                            }}</span>
+                    </div>
+                    <p class="menu-ingredients">{{ item.ingredients_ar if lang == 'ar' and item.ingredients_ar else
+                        item.ingredients }}</p>
+                </div>
+            </div>
+            {% else %}
+            <p style="color: var(--text-muted); font-style: italic;">{{ 'لا توجد مشروبات متاحة حالياً.' if lang == 'ar'
+                else 'No drinks currently available.' }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-category-group" id="group-dessert">
+        <h2 class="section-title">{{ 'الحلويات الشهية' if lang == 'ar' else 'Sweet Desserts' }}</h2>
+        <div class="menu-grid">
+            {% for item in desserts %}
+            <div class="menu-card" data-category="dessert">
+                <div class="image-wrapper skeleton">
+                    {% if item.image_path %}
+                    <img class="menu-image"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3C/svg%3E"
+                        data-src="{{ item.image_path }}"
+                        alt="{{ item.name_ar if lang == 'ar' and item.name_ar else item.name }}" loading="lazy">
+                    {% else %}
+                    <div class="admin-thumb-placeholder"
+                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02);">
+                        <span>{{ 'لا توجد صورة' if lang == 'ar' else 'No Image' }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="menu-info">
+                    <div class="menu-header">
+                        <h3 class="menu-title">{{ item.name_ar if lang == 'ar' and item.name_ar else item.name }}</h3>
+                        <span class="menu-price">{{ item.price | round(2) }} {{ 'ل.س' if lang == 'ar' else 'S.P'
+                            }}</span>
+                    </div>
+                    <p class="menu-ingredients">{{ item.ingredients_ar if lang == 'ar' and item.ingredients_ar else
+                        item.ingredients }}</p>
+                </div>
+            </div>
+            {% else %}
+            <p style="color: var(--text-muted); font-style: italic;">{{ 'لا توجد حلويات متاحة حالياً.' if lang == 'ar'
+                else 'No desserts currently available.' }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
